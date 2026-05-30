@@ -1,0 +1,56 @@
+services:
+  cs2:
+    image: joedwards32/cs2
+    container_name: cs2
+    hostname: cs2
+    restart: unless-stopped
+    labels:
+      - "game-admin-panel.enabled=true"
+      - "game-admin-panel.game=cs2"
+    volumes:
+      - cs2:/home/steam/cs2-dedicated/
+    ports:
+      - "27015:27015/tcp"
+      - "27015:27015/udp"
+      - "27020:27020/udp"
+    environment:
+      - SRCDS_TOKEN
+      - DEBUG=0
+      - STEAMAPPVALIDATE=0
+      - CS2_SERVERNAME=changeme
+      - CS2_CHEATS=0
+      - CS2_PORT=27015
+      - CS2_SERVER_HIBERNATE=0
+      - CS2_RCON_PORT
+      - CS2_LAN=0
+      - CS2_RCONPW=dateniteroolz
+      - CS2_PW
+      - CS2_MAXPLAYERS=10
+      - CS2_ADDITIONAL_ARGS
+      - CS2_CFG_URL
+      - CS2_GAMEALIAS
+      - CS2_GAMETYPE=0
+      - CS2_GAMEMODE=1
+      - CS2_MAPGROUP=mg_active
+      - CS2_STARTMAP=de_inferno
+      - CS2_HOST_WORKSHOP_COLLECTION
+      - CS2_HOST_WORKSHOP_MAP
+      - CS2_BOT_DIFFICULTY
+      - CS2_BOT_QUOTA
+      - CS2_BOT_QUOTA_MODE
+      - TV_AUTORECORD=0
+      - TV_ENABLE=0
+      - TV_PORT=27020
+      - TV_PW=changeme
+      - TV_RELAY_PW=changeme
+      - TV_MAXRATE=0
+      - TV_DELAY=0
+      - CS2_LOG=on
+      - CS2_LOG_MONEY=0
+      - CS2_LOG_DETAIL=0
+      - CS2_LOG_ITEMS=0
+    stdin_open: true
+    tty: true
+
+volumes:
+  cs2:
