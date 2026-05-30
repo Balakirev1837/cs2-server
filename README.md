@@ -49,3 +49,7 @@ docker compose restart cs2
 ```
 
 The container auto-updates on startup.
+
+---
+
+This is firmly [houseplant software](https://hannahilea.com/blog/houseplant-programming/)! It probably won't do what you want!
